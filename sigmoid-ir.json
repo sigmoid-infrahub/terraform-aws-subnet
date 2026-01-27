@@ -1,0 +1,24 @@
+{
+    "resourceSpecId": "c1c1c1c1-c1c1-4c1c-8c1c-c1c1c1c1c1c1",
+    "stableId": "public-subnet",
+    "displayName": "Public Subnet",
+    "resourceType": "network.subnet",
+    "vpcDependency": "required",
+    "scope": {
+        "vpcId": "core-vpc",
+        "az": "ap-northeast-2a"
+    },
+    "status": "draft",
+    "inputs": {
+        "vpc_id": { "ref": "core-vpc.vpc_id", "required": true },
+        "cidr_block": "10.20.1.0/24",
+        "availability_zone": "ap-northeast-2a",
+        "map_public_ip_on_launch": true
+    },
+    "position": { "x": 240, "y": 0 },
+    "terraform": {
+        "module": {
+            "source": "../../terraform-modules/terraform-aws-subnet"
+        }
+    }
+}
