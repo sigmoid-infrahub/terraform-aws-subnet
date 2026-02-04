@@ -13,12 +13,20 @@
     "status": "draft",
     "inputs": {
         "vpc_id": { "ref": "core-vpc.vpc_id", "required": true },
+        "subnet_ids": [
+            { "ref": "core-vpc.subnet_id", "required": true }
+        ],
+        "security_group_ids": [
+            { "ref": "core-vpc.default_security_group_id", "required": true }
+        ],
         "cidr_block": "10.20.1.0/24",
         "availability_zone": "ap-northeast-2a",
         "map_public_ip_on_launch": true
     },
     "inputSpecs": [
         { "name": "vpc_id", "type": "string", "required": true, "description": "Parent VPC ID" },
+        { "name": "subnet_ids", "type": "array", "required": false, "description": "List of subnet IDs (for VPC dependency validation)" },
+        { "name": "security_group_ids", "type": "array", "required": false, "description": "List of security group IDs (for VPC dependency validation)" },
         { "name": "cidr_block", "type": "string", "required": true, "description": "CIDR block for the subnet" },
         { "name": "availability_zone", "type": "string", "required": false },
         { "name": "map_public_ip_on_launch", "type": "boolean", "required": false, "default": false }
@@ -26,7 +34,8 @@
     "position": { "x": 240, "y": 0 },
     "terraform": {
         "module": {
-            "source": "../../terraform-modules/terraform-aws-subnet"
+            "source": "github.com/sigmoid-hq/terraform-aws-subnet",
+            "ref": "main"
         }
     }
 }
