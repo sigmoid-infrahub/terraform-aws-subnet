@@ -2,6 +2,8 @@
     "resourceSpecId": "c1c1c1c1-c1c1-4c1c-8c1c-c1c1c1c1c1c1",
     "stableId": "public-subnet",
     "displayName": "Public Subnet",
+    "category": "network",
+    "iconUrl": "https://cdn.sigmoid.us/icons/aws/group/private-subnet.svg",
     "resourceType": "network.subnet",
     "vpcDependency": "required",
     "scope": {
@@ -15,6 +17,12 @@
         "availability_zone": "ap-northeast-2a",
         "map_public_ip_on_launch": true
     },
+    "inputSpecs": [
+        { "name": "vpc_id", "type": "string", "required": true, "description": "Parent VPC ID" },
+        { "name": "cidr_block", "type": "string", "required": true, "description": "CIDR block for the subnet" },
+        { "name": "availability_zone", "type": "string", "required": false },
+        { "name": "map_public_ip_on_launch", "type": "boolean", "required": false, "default": false }
+    ],
     "position": { "x": 240, "y": 0 },
     "terraform": {
         "module": {
