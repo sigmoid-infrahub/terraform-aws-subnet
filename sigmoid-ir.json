@@ -13,5 +13,12 @@
             "source": "github.com/sigmoid-hq/terraform-aws-subnet",
             "ref": "main"
         }
+    },
+    "easy": {
+        "hidden": true,
+        "alias": "Subnet",
+        "group": "network-foundation",
+        "priority": 20,
+        "allowedProperties": ["cidr_block", "availability_zone", "map_public_ip_on_launch"]
     }
 }
