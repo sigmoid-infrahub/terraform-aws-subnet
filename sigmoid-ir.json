@@ -1,7 +1,7 @@
 {
     "resourceSpecId": "c1c1c1c1-c1c1-4c1c-8c1c-c1c1c1c1c1c1",
     "stableId": "public-subnet",
-    "displayName": "Public Subnet",
+    "displayName": "Subnet",
     "category": "network",
     "iconUrl": "https://cdn.sigmoid.us/icons/aws/group/private-subnet.svg",
     "resourceType": "network.subnet",
