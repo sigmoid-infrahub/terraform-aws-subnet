@@ -1,0 +1,24 @@
+{
+    "resourceSpecId": "c1c1c1c1-c1c1-4c1c-8c1c-c1c1c1c1c1c1",
+    "stableId": "public-subnet",
+    "displayName": "Subnet",
+    "category": "network",
+    "iconUrl": "https://cdn.sigmoid.us/icons/aws/group/private-subnet.svg",
+    "resourceType": "network.subnet",
+    "vpcDependency": "required",
+    "status": "draft",
+    "position": { "x": 240, "y": 0 },
+    "terraform": {
+        "module": {
+            "source": "github.com/sigmoid-hq/terraform-aws-subnet",
+            "ref": "main"
+        }
+    },
+    "easy": {
+        "hidden": true,
+        "alias": "Subnet",
+        "group": "network-foundation",
+        "priority": 20,
+        "allowedProperties": ["cidr_block", "availability_zone", "map_public_ip_on_launch"]
+    }
+}
