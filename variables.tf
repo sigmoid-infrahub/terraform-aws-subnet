@@ -24,6 +24,24 @@ variable "map_public_ip_on_launch" {
   default     = false
 }
 
+variable "assign_ipv6_address_on_creation" {
+  type        = bool
+  description = "Assign an IPv6 address to network interfaces created in the subnet"
+  default     = false
+}
+
+variable "enable_dns64" {
+  type        = bool
+  description = "Enable DNS64 for the subnet"
+  default     = false
+}
+
+variable "enable_resource_name_dns_a_record_on_launch" {
+  type        = bool
+  description = "Enable resource-name DNS A records for instances launched in the subnet"
+  default     = false
+}
+
 variable "tags" {
   type        = map(string)
   description = "Tags to apply to the subnet"
