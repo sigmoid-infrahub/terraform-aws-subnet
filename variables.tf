@@ -18,6 +18,12 @@ variable "availability_zone" {
   description = "Availability zone for the subnet"
 }
 
+variable "ipv6_cidr_block" {
+  type        = string
+  description = "IPv6 CIDR block for the subnet"
+  default     = null
+}
+
 variable "map_public_ip_on_launch" {
   type        = bool
   description = "Whether to map public IPs on launch"
